@@ -126,26 +126,28 @@ h1 {
 .ring-base,
 .ring-glow {
   fill: none;
-  stroke-width: 3;
   vector-effect: non-scaling-stroke;
 }
 .ring-base {
-  stroke: #7d8593;
+  stroke: #7a818d;
+  stroke-width: 4.2;
+  filter: drop-shadow(0 0 .6px rgba(255,255,255,.45));
 }
 .ring-glow {
   stroke: #ffffff;
+  stroke-width: 4.2;
   stroke-linecap: round;
   stroke-dasharray: 8 92;
   stroke-dashoffset: 0;
-  filter: drop-shadow(0 0 1.6px rgba(255,255,255,.95))
-          drop-shadow(0 0 3px rgba(214,228,255,.75))
-          drop-shadow(0 0 3.5px rgba(255,208,238,.5));
+  filter: drop-shadow(0 0 1.8px rgba(255,255,255,.95))
+          drop-shadow(0 0 3.2px rgba(214,228,255,.8))
+          drop-shadow(0 0 3.8px rgba(255,208,238,.54));
   animation: borderOrbit 5s linear infinite;
 }
 .liquid-btn:hover .ring-glow {
-  filter: drop-shadow(0 0 2px rgba(255,255,255,1))
-          drop-shadow(0 0 3.8px rgba(214,228,255,.85))
-          drop-shadow(0 0 4.2px rgba(255,208,238,.62));
+  filter: drop-shadow(0 0 2.2px rgba(255,255,255,1))
+          drop-shadow(0 0 4px rgba(214,228,255,.9))
+          drop-shadow(0 0 4.6px rgba(255,208,238,.66));
 }
 .liquid-btn.large { font-size: 16px; padding: 16px 28px; }
 
