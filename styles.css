@@ -118,11 +118,7 @@ h1 {
   inset: 0;
   border-radius: inherit;
   padding: 3px;
-  background:
-    repeating-linear-gradient(90deg, rgba(255,255,255,.18) 0 7px, rgba(142,151,166,.12) 7px 13px),
-    linear-gradient(110deg, #727a89 6%, #f8fbff 27%, #98a1b0 45%, #ffffff 60%, #7a8291 84%);
-  background-size: 180% 100%, 180% 100%;
-  animation: borderFlow 3.2s cubic-bezier(0.22,1,0.36,1) infinite;
+  background: linear-gradient(110deg, #727a89 6%, #f8fbff 27%, #98a1b0 45%, #ffffff 60%, #7a8291 84%);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -143,7 +139,6 @@ h1 {
   mask-composite: exclude;
   pointer-events: none;
 }
-.liquid-btn:hover::before { animation-duration: 2.2s; }
 .liquid-btn:hover::after { animation-duration: 1.8s; }
 .liquid-btn span, .liquid-btn { position: relative; z-index: 1; }
 .liquid-btn.large { font-size: 16px; padding: 16px 28px; }
@@ -205,11 +200,6 @@ h1 {
 @keyframes sheen {
   from { transform: translateX(-46%); }
   to { transform: translateX(52%); }
-}
-@keyframes borderFlow {
-  0% { background-position: -35% 0, -30% 0; filter: brightness(1); }
-  50% { background-position: 40% 0, 35% 0; filter: brightness(1.1); }
-  100% { background-position: 105% 0, 100% 0; filter: brightness(1); }
 }
 @keyframes borderShineLTR {
   0% { transform: translateX(-120%); opacity: 0; }
