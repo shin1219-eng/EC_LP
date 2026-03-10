@@ -10,7 +10,7 @@
 body {
   margin: 0;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background: var(--bg);
+  background: #ffffff !important;
   color: var(--text);
 }
 
@@ -101,16 +101,21 @@ h1 {
 
 .liquid-btn {
   position: relative;
-  border: 2.5px solid #8e97a6;
+  border: 3px solid transparent;
   color: #101319;
   padding: 14px 22px;
   border-radius: 999px;
   font-weight: 700;
   letter-spacing: .01em;
-  background: #ffffff;
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(110deg, #7f8794 6%, #f7f9fc 28%, #9aa3b2 48%, #ffffff 63%, #7a8393 84%) border-box;
   cursor: pointer;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(36,43,57,.08);
+  box-shadow:
+    0 4px 12px rgba(36,43,57,.10),
+    0 0 0 1px rgba(255,255,255,.7) inset,
+    0 0 12px rgba(210,218,232,.55);
 }
 .liquid-btn::before {
   content: "";
@@ -125,11 +130,17 @@ h1 {
 .liquid-btn::after {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: -2px;
   border-radius: inherit;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,.82);
+  background: linear-gradient(120deg, transparent 12%, rgba(255,255,255,.9) 38%, transparent 58%);
+  transform: translateX(-58%);
+  opacity: .8;
+  filter: blur(1.2px);
+  animation: borderShine 2.2s linear infinite;
+  pointer-events: none;
 }
 .liquid-btn:hover::before { transform: translateX(54%) rotate(9deg); }
+.liquid-btn:hover::after { animation-duration: 1.1s; opacity: 1; }
 .liquid-btn span, .liquid-btn { position: relative; z-index: 1; }
 .liquid-btn.large { font-size: 16px; padding: 16px 28px; }
 
@@ -190,6 +201,10 @@ h1 {
 @keyframes sheen {
   from { transform: translateX(-46%); }
   to { transform: translateX(52%); }
+}
+@keyframes borderShine {
+  from { transform: translateX(-62%); }
+  to { transform: translateX(64%); }
 }
 
 @media (max-width: 980px) {
