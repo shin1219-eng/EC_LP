@@ -129,25 +129,26 @@ h1 {
   vector-effect: non-scaling-stroke;
 }
 .ring-base {
-  stroke: #7a818d;
   stroke-width: 4.2;
-  filter: drop-shadow(0 0 .6px rgba(255,255,255,.45));
+  filter: drop-shadow(0 .35px .5px rgba(255,255,255,.55))
+          drop-shadow(0 -.35px .45px rgba(66,74,90,.28));
 }
 .ring-glow {
-  stroke: #ffffff;
   stroke-width: 4.2;
   stroke-linecap: round;
   stroke-dasharray: 8 92;
   stroke-dashoffset: 0;
-  filter: drop-shadow(0 0 1.8px rgba(255,255,255,.95))
-          drop-shadow(0 0 3.2px rgba(214,228,255,.8))
-          drop-shadow(0 0 3.8px rgba(255,208,238,.54));
+  filter: drop-shadow(0 0 1.9px rgba(255,255,255,.98))
+          drop-shadow(0 0 3px rgba(205,229,255,.78))
+          drop-shadow(0 0 3.4px rgba(255,202,236,.58))
+          drop-shadow(0 0 3px rgba(214,255,232,.45));
   animation: borderOrbit 5s linear infinite;
 }
 .liquid-btn:hover .ring-glow {
-  filter: drop-shadow(0 0 2.2px rgba(255,255,255,1))
-          drop-shadow(0 0 4px rgba(214,228,255,.9))
-          drop-shadow(0 0 4.6px rgba(255,208,238,.66));
+  filter: drop-shadow(0 0 2.25px rgba(255,255,255,1))
+          drop-shadow(0 0 3.8px rgba(205,229,255,.88))
+          drop-shadow(0 0 4.2px rgba(255,202,236,.66))
+          drop-shadow(0 0 3.6px rgba(214,255,232,.52));
 }
 .liquid-btn.large { font-size: 16px; padding: 16px 28px; }
 
