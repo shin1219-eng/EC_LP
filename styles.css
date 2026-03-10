@@ -118,7 +118,11 @@ h1 {
   inset: 0;
   border-radius: inherit;
   padding: 3px;
-  background: linear-gradient(110deg, #7f8794 6%, #f7f9fc 28%, #9aa3b2 48%, #ffffff 63%, #7a8393 84%);
+  background:
+    repeating-linear-gradient(90deg, rgba(255,255,255,.18) 0 7px, rgba(142,151,166,.12) 7px 13px),
+    linear-gradient(110deg, #727a89 6%, #f8fbff 27%, #98a1b0 45%, #ffffff 60%, #7a8291 84%);
+  background-size: 180% 100%, 180% 100%;
+  animation: borderFlow 3.2s cubic-bezier(0.22,1,0.36,1) infinite;
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -130,16 +134,17 @@ h1 {
   inset: 0;
   border-radius: inherit;
   padding: 3px;
-  background: linear-gradient(120deg, transparent 22%, rgba(255,255,255,.95) 40%, transparent 58%);
-  transform: translateX(-62%);
-  animation: borderShine 2.1s linear infinite;
-  filter: blur(1px);
+  background: linear-gradient(120deg, transparent 18%, rgba(255,255,255,.98) 42%, transparent 62%);
+  transform: translateX(-70%);
+  animation: borderShine 2.8s linear infinite;
+  filter: blur(1.1px);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
 }
-.liquid-btn:hover::after { animation-duration: 1.1s; }
+.liquid-btn:hover::before { animation-duration: 1.8s; }
+.liquid-btn:hover::after { animation-duration: 1.2s; }
 .liquid-btn span, .liquid-btn { position: relative; z-index: 1; }
 .liquid-btn.large { font-size: 16px; padding: 16px 28px; }
 
@@ -201,9 +206,15 @@ h1 {
   from { transform: translateX(-46%); }
   to { transform: translateX(52%); }
 }
+@keyframes borderFlow {
+  0% { background-position: -35% 0, -30% 0; filter: brightness(1); }
+  50% { background-position: 40% 0, 35% 0; filter: brightness(1.1); }
+  100% { background-position: 105% 0, 100% 0; filter: brightness(1); }
+}
 @keyframes borderShine {
-  from { transform: translateX(-62%); }
-  to { transform: translateX(64%); }
+  from { transform: translateX(-70%); opacity: .65; }
+  50% { opacity: 1; }
+  to { transform: translateX(72%); opacity: .65; }
 }
 
 @media (max-width: 980px) {
